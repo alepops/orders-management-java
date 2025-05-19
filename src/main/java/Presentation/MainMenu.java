@@ -1,13 +1,11 @@
-/**
- * Meniul principal al aplicatiei Orders Management.
- * Permite navigarea catre ferestrele de clienti, produse si comenzi.
- */
-
-
 package Presentation;
 
 import javax.swing.*;
 import java.awt.*;
+/**
+ * Meniul principal al aplicatiei Orders Management.
+ * Permite navigarea catre ferestrele de clienti, produse si comenzi.
+ */
 
 public class MainMenu extends JFrame {
     // Butoane de navigare catre functionalitati

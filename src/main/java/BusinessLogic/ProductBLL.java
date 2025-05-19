@@ -1,14 +1,12 @@
-/**
- * Clasa care gestioneaza logica de business pentru produse.
- */
-
-
 package BusinessLogic;
 
 import DataAcess.ProductDAO;
 import DataModel.Product;
 
 import java.util.List;
+/**
+ * Clasa care gestioneaza logica de business pentru produse.
+ */
 
 public class ProductBLL {
     private final ProductDAO productDAO = new ProductDAO();

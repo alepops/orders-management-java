@@ -1,5 +1,4 @@
 package DataAcess;
-
 import java.beans.IntrospectionException;
 import java.beans.PropertyDescriptor;
 import java.lang.reflect.*;
@@ -11,15 +10,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
-
 /**
- * @Author: Technical University of Cluj-Napoca, Romania Distributed Systems
- *          Research Laboratory, http://dsrl.coned.utcluj.ro/
- * @Since: Apr 03, 2017
- * @Source http://www.java-blog.com/mapping-javaobjects-database-reflection-generics
+ * Clasa abstracta care defineste operatii generice pentru accesul la baza de date.
+ * Utilizeaza Reflection si generice pentru a efectua operatii CRUD pe orice tip de obiect model.
+ *
+ * @param <T> Tipul entitatii gestionate de DAO
  */
 public class AbstractDAO<T> {
+    /**
+     * Logger pentru raportarea erorilor sau informatiilor.
+     */
     protected static final Logger LOGGER = Logger.getLogger(AbstractDAO.class.getName());
 
     private final Class<T> type;
@@ -38,7 +38,7 @@ public class AbstractDAO<T> {
         sb.append(type.getSimpleName());
         sb.append(" WHERE " + field + " =?");
         return sb.toString();
-    }
+       }
 
     public List<T> findAll() {
         // TODO:
@@ -127,7 +127,7 @@ public class AbstractDAO<T> {
         for (Field field : type.getDeclaredFields()) {
             field.setAccessible(true);
             try {
-                if (!field.getName().equalsIgnoreCase("id")) { // presupunem că "id" e auto-incrementat
+                if (!field.getName().equalsIgnoreCase("id")) {
                     fields.append(field.getName()).append(",");
                     values.append("?").append(",");
                     parameters.add(field.get(t));
@@ -137,7 +137,6 @@ public class AbstractDAO<T> {
             }
         }
 
-        // eliminăm ultima virgulă
         fields.setLength(fields.length() - 1);
         values.setLength(values.length() - 1);
 

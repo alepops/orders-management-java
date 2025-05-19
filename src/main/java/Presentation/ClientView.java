@@ -1,11 +1,4 @@
-/**
- * Fereastra grafica pentru gestionarea clientilor.
- * Permite vizualizarea, adaugarea si stergerea clientilor.
- */
-
-
 package Presentation;
-
 import BusinessLogic.ClientBLL;
 import DataModel.Client;
 
@@ -14,7 +7,10 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.util.List;
 import Util.ReflectionTableGenerator;
-
+/**
+ * Fereastra grafica pentru gestionarea clientilor.
+ * Permite vizualizarea, adaugarea si stergerea clientilor.
+ */
 public class ClientView extends JFrame {
     // Componente si logica pentru interfata de clienti
     private final ClientBLL clientBLL = new ClientBLL();
@@ -29,7 +25,7 @@ public class ClientView extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
-        // Tabel
+
         tableModel = new DefaultTableModel(new Object[]{"ID", "Nume", "Email"}, 0);
         table = new JTable(tableModel);
         table.getSelectionModel().addListSelectionListener(e -> {
@@ -42,14 +38,12 @@ public class ClientView extends JFrame {
 
         refreshTable();
 
-        // Formulare input
         JPanel formPanel = new JPanel();
         formPanel.add(new JLabel("Nume:"));
         formPanel.add(tfNume);
         formPanel.add(new JLabel("Email:"));
         formPanel.add(tfEmail);
 
-        // Butoane
         JButton addBtn = new JButton("Adaugă Client");
         JButton deleteBtn = new JButton("Șterge Client");
         JButton editBtn = new JButton("Editeaza Client");
@@ -106,7 +100,7 @@ public class ClientView extends JFrame {
             return;
         }
 
-        // Găsește indexul coloanei "id" indiferent de poziție
+
         int columnIndex = -1;
         for (int i = 0; i < table.getColumnCount(); i++) {
             if (table.getColumnName(i).equalsIgnoreCase("id")) {
@@ -120,7 +114,6 @@ public class ClientView extends JFrame {
             return;
         }
 
-        // Citește ID-ul de pe coloana corectă
         Object idObj = table.getValueAt(row, columnIndex);
         int id = Integer.parseInt(idObj.toString());
 

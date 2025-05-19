@@ -1,18 +1,16 @@
+package DataModel;
 /**
  * Clasa care reprezinta o comanda efectuata de un client.
  */
-
-package DataModel;
-
-public class Order {
+public class Orders {
     private int id;
     private int idClient;
     private int idProduct;
     private int cantitate;
 
-    public Order() {}
+    public Orders() {}
 
-    public Order(int id, int idClient, int idProduct, int cantitate) {
+    public Orders(int id, int idClient, int idProduct, int cantitate) {
         this.id = id;
         this.idClient = idClient;
         this.idProduct = idProduct;

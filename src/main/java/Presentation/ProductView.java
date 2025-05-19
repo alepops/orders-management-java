@@ -1,11 +1,4 @@
-/**
- * Fereastra grafica pentru gestionarea produselor.
- * Permite vizualizarea, adaugarea si stergerea produselor.
- */
-
-
 package Presentation;
-
 import BusinessLogic.ProductBLL;
 import DataModel.Product;
 import Util.ReflectionTableGenerator;
@@ -14,7 +7,10 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.util.List;
-
+/**
+ * Fereastra grafica pentru gestionarea produselor.
+ * Permite vizualizarea, adaugarea si stergerea produselor.
+ */
 public class ProductView extends JFrame {
     // Componente si logica pentru interfata de produse
     private final ProductBLL productBLL = new ProductBLL();

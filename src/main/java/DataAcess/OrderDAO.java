@@ -1,8 +1,8 @@
 package DataAcess;
 
-import DataModel.Order;
+import DataModel.Orders;
 
-public class OrderDAO extends AbstractDAO<Order> {
+public class OrderDAO extends AbstractDAO<Orders> {
     public OrderDAO() {
         super();
     }

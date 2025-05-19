@@ -1,16 +1,12 @@
-/**
- * Clasa care gestioneaza logica de business pentru clienti.
- * Ofera metode pentru adaugarea, actualizarea, stergerea si cautarea clientilor.
- */
-
-
 package BusinessLogic;
-
 import DataAcess.ClientDAO;
 import DataModel.Client;
 
 import java.util.List;
-
+/**
+ * Clasa care gestioneaza logica de business pentru clienti.
+ * Ofera metode pentru adaugarea, actualizarea, stergerea si cautarea clientilor.
+ */
 public class ClientBLL {
     /**
      * Returneaza lista tuturor clientilor din baza de date.

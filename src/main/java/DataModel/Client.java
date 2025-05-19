@@ -1,9 +1,7 @@
+package DataModel;
 /**
  * Clasa care reprezinta entitatea Client.
  */
-
-package DataModel;
-
 public class Client {
     private int id;
     private String nume;

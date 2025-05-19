@@ -1,14 +1,6 @@
-/**
- * Fereastra grafica pentru plasarea comenzilor.
- * Permite selectarea clientului, produsului si cantitatii.
- * Afiseaza factura generata dupa plasarea comenzii.
- */
-
-
 package Presentation;
-
 import BusinessLogic.ClientBLL;
-import BussinessLogic.OrderBLL;
+import BusinessLogic.OrderBLL;
 import BusinessLogic.ProductBLL;
 import DataModel.Client;
 import DataModel.Product;
@@ -16,7 +8,11 @@ import DataModel.Product;
 import javax.swing.*;
 import java.awt.*;
 import java.util.List;
-
+/**
+ * Fereastra grafica pentru plasarea comenzilor.
+ * Permite selectarea clientului, produsului si cantitatii.
+ * Afiseaza factura generata dupa plasarea comenzii.
+ */
 public class OrderView extends JFrame {
     // Componente si logica pentru plasarea comenzilor
 
@@ -37,7 +33,6 @@ public class OrderView extends JFrame {
 
         populateCombos();
 
-        // Panel selecții
         JPanel formPanel = new JPanel(new GridLayout(4, 2, 10, 5));
         formPanel.setBorder(BorderFactory.createTitledBorder("Date comandă"));
         formPanel.add(new JLabel("Client:"));
@@ -57,11 +52,9 @@ public class OrderView extends JFrame {
         });
         formPanel.add(backBtn);
 
-        // Factura
         facturaText.setEditable(false);
         JScrollPane scrollPane = new JScrollPane(facturaText);
 
-        // Layout
         setLayout(new BorderLayout());
         add(formPanel, BorderLayout.NORTH);
         add(scrollPane, BorderLayout.CENTER);

@@ -1,9 +1,7 @@
+package DataModel;
 /**
  * Clasa care reprezinta un produs din depozit.
  */
-
-package DataModel;
-
 public class Product {
     private int id;
     private String nume;

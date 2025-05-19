@@ -1,16 +1,14 @@
-package BussinessLogic;
-
+package BusinessLogic;
 import DataAcess.BillDAO;
 import DataAcess.OrderDAO;
 import DataAcess.ProductDAO;
 import DataModel.Bill;
-import DataModel.Order;
+import DataModel.Orders;
 import DataModel.Product;
 /**
  * Clasa care gestioneaza logica de plasare a comenzilor.
  * Verifica stocul disponibil, actualizeaza cantitatile si genereaza facturi.
  */
-
 public class OrderBLL {
     private final ProductDAO productDAO;
     private final OrderDAO orderDAO;
@@ -43,7 +41,7 @@ public class OrderBLL {
         productDAO.update(product);
 
         // creare comandă
-        Order order = new Order();
+        Orders order = new Orders();
         order.setIdClient(clientId);
         order.setIdProduct(productId);
         order.setCantitate(quantity);
