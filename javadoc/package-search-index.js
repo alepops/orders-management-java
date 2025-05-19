@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"BusinessLogic"},{"l":"DataAcess"},{"l":"DataModel"},{"l":"org.example"},{"l":"Presentation"},{"l":"Util"}];updateSearchResults();
