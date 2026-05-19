@@ -40,14 +40,14 @@ public class OrderBLL {
         product.setStoc(newStock);
         productDAO.update(product);
 
-        // creare comandă
+        // creare comanda
         Orders order = new Orders();
         order.setIdClient(clientId);
         order.setIdProduct(productId);
         order.setCantitate(quantity);
         orderDAO.insert(order);
 
-        // generare factură
+        // generare factura
         double total = quantity * product.getPret();
         String billText = "Factura pentru clientul #" + clientId + "\n" +
                 "Produs: " + product.getNume() + "\n" +

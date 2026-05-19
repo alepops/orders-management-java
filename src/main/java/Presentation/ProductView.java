@@ -50,10 +50,10 @@ public class ProductView extends JFrame {
         formPanel.add(tfPret);
 
         // Butoane
-        JButton addBtn = new JButton("Adaugă Produs");
-        JButton deleteBtn = new JButton("Șterge Produs");
+        JButton addBtn = new JButton("Adauga Produs");
+        JButton deleteBtn = new JButton("Sterge Produs");
         JButton editBtn = new JButton("Editeaza Produs");
-        JButton backBtn = new JButton("Înapoi la Meniu Principal");
+        JButton backBtn = new JButton("Inapoi la Meniu Principal");
 
         addBtn.addActionListener(e -> addProduct());
         deleteBtn.addActionListener(e -> deleteProduct());

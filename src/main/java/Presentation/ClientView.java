@@ -44,10 +44,10 @@ public class ClientView extends JFrame {
         formPanel.add(new JLabel("Email:"));
         formPanel.add(tfEmail);
 
-        JButton addBtn = new JButton("Adaugă Client");
-        JButton deleteBtn = new JButton("Șterge Client");
+        JButton addBtn = new JButton("Adauga Client");
+        JButton deleteBtn = new JButton("Sterge Client");
         JButton editBtn = new JButton("Editeaza Client");
-        JButton backBtn = new JButton("Înapoi la Meniu Principal");
+        JButton backBtn = new JButton("Inapoi la Meniu Principal");
 
         addBtn.addActionListener(e -> addClient());
         deleteBtn.addActionListener(e -> deleteClient());

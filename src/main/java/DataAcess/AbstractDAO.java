@@ -41,7 +41,7 @@ public class AbstractDAO<T> {
        }
 
     public List<T> findAll() {
-        // TODO:
+        // TODO: select from tabel
         String query = "SELECT * FROM " + type.getSimpleName();
         List<T> results = new ArrayList<>();
 
@@ -57,7 +57,7 @@ public class AbstractDAO<T> {
         return results;
     }
 
-    public T findById(int id) {
+    public T findById(int id) { //cauta dupa id folosind metoda cerateSelectQuery
         Connection connection = null;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
@@ -146,7 +146,7 @@ public class AbstractDAO<T> {
         try (Connection connection = ConnectionFactory.getConnection();
              PreparedStatement statement = connection.prepareStatement(query, PreparedStatement.RETURN_GENERATED_KEYS)) {
 
-            for (int i = 0; i < parameters.size(); i++) {
+            for (int i = 0; i < parameters.size(); i++) { //seteaza valorile in interogare
                 statement.setObject(i + 1, parameters.get(i));
             }
 
@@ -186,7 +186,7 @@ public class AbstractDAO<T> {
             }
         }
 
-        query.setLength(query.length() - 2); // eliminăm ultima virgulă
+        query.setLength(query.length() - 2); // elimina ultima virgula
         query.append(" WHERE id = ?");
 
         try (Connection connection = ConnectionFactory.getConnection();

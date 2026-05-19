@@ -26,7 +26,7 @@ public class OrderView extends JFrame {
     private final JTextArea facturaText = new JTextArea(8, 40);
 
     public OrderView() {
-        setTitle("Plasare Comandă");
+        setTitle("Plasare Comanda");
         setSize(700, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
@@ -34,7 +34,7 @@ public class OrderView extends JFrame {
         populateCombos();
 
         JPanel formPanel = new JPanel(new GridLayout(4, 2, 10, 5));
-        formPanel.setBorder(BorderFactory.createTitledBorder("Date comandă"));
+        formPanel.setBorder(BorderFactory.createTitledBorder("Date comanda"));
         formPanel.add(new JLabel("Client:"));
         formPanel.add(clientBox);
         formPanel.add(new JLabel("Produs:"));
@@ -42,10 +42,10 @@ public class OrderView extends JFrame {
         formPanel.add(new JLabel("Cantitate:"));
         formPanel.add(tfCantitate);
 
-        JButton placeBtn = new JButton("Plasează Comanda");
+        JButton placeBtn = new JButton("Plaseaza Comanda");
         placeBtn.addActionListener(e -> placeOrder());
         formPanel.add(placeBtn);
-        JButton backBtn = new JButton("Înapoi la Meniu Principal");
+        JButton backBtn = new JButton("Inapoi la Meniu Principal");
         backBtn.addActionListener(e -> {
             this.dispose();
             new MainMenu();
@@ -79,14 +79,14 @@ public class OrderView extends JFrame {
             int quantity = Integer.parseInt(tfCantitate.getText().trim());
 
             if (client == null || product == null) {
-                throw new IllegalArgumentException("Selectează un client și un produs.");
+                throw new IllegalArgumentException("Selecteaza un client si un produs.");
             }
 
             String rezultat = orderBLL.placeOrder(client.getId(), product.getId(), quantity);
-            facturaText.setText(rezultat.contains("Comanda a fost procesată") ? getFacturaText(client, product, quantity) : rezultat);
+            facturaText.setText(rezultat.contains("Comanda a fost procesata") ? getFacturaText(client, product, quantity) : rezultat);
             populateCombos(); // actualizare stocuri
         } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(this, "Cantitatea trebuie să fie un număr întreg!", "Eroare", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Cantitatea trebuie sa fie un numar intreg!", "Eroare", JOptionPane.ERROR_MESSAGE);
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(this, ex.getMessage(), "Eroare", JOptionPane.ERROR_MESSAGE);
         }
@@ -94,11 +94,11 @@ public class OrderView extends JFrame {
 
     private String getFacturaText(Client client, Product product, int qty) {
         double total = qty * product.getPret();
-        return "Factura generată:\n" +
+        return "Factura generata:\n" +
                 "Client: " + client.getNume() + "\n" +
                 "Produs: " + product.getNume() + "\n" +
                 "Cantitate: " + qty + "\n" +
-                "Preț unitar: " + product.getPret() + " lei\n" +
+                "Pret unitar: " + product.getPret() + " lei\n" +
                 "Total: " + total + " lei\n";
     }
 }
